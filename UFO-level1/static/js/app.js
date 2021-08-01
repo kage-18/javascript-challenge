@@ -9,7 +9,7 @@ function submitHandler(){
     var inputValue = String(inputElement.property("value"));
     tbody.html("");
 
-    tableData.forEach((sighting) => {
+    tableData.filter(date => date["datetime"] === inputValue).forEach((sighting) => {
         var row = tbody.append("tr");
         Object.values(sighting).forEach((values) => {
           var cell = row.append("td");
